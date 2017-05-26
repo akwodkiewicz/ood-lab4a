@@ -32,7 +32,7 @@ namespace Robotics
             else
             {
                 if (verbose)
-                    Console.WriteLine("{0} tworzy metalowy element o nazwie {1} i rozmiarze {2} m do auta {3} ",GetName(), p.GetName(), p.GetSize(), p.GetCar());
+                    Console.WriteLine("{0} tworzy metalowy element o nazwie {1} i rozmiarze {2} m do auta {3} ", GetName(), p.GetName(), p.GetSize(), p.GetCar());
                 return true;
             }
         }

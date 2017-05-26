@@ -11,7 +11,6 @@ namespace Robotics
 	 */
     public class ABB : Robot
     {
-
         public override string GetName()
         {
             return "abb";
@@ -21,7 +20,6 @@ namespace Robotics
         {
             return 1250;
         }
-
         public override bool Build(MetalPart p, bool verbose)
         {
             if (p.GetWeight() > 500 || p.GetCar() != Car.Standard)
@@ -29,7 +27,7 @@ namespace Robotics
             else
             {
                 if (verbose)
-                    Console.WriteLine("{0} tworzy metalowy element o nazwie {1} i rozmiarze {2} m do auta {3} ",GetName(), p.GetName(), p.GetWeight(), p.GetCar());
+                    Console.WriteLine("{0} tworzy metalowy element o nazwie {1} i rozmiarze {2} m do auta {3} ", GetName(), p.GetName(), p.GetWeight(), p.GetCar());
                 return true;
             }
         }

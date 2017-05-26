@@ -33,16 +33,13 @@ namespace Robotics
             };
 
             /* UZUPEŁNIJ */
-            //--------------------------------------------
             foreach (var part in partsForServices)
                 foreach (var robot in availableRobots)
-                {
                     part.GetBuilt(robot, true);
-                }
-            Console.WriteLine();
-            //--------------------------------------------
+
 
             // część 2
+            Console.WriteLine();
             Console.WriteLine("==> Wyznaczanie liczby robotów zdolnych do wyprodukowania poszczególnych części, o jakimkolwiek rozmiarze i jakiejkolwiek wadze");
 
             Part[] allPartTypes = new Part[] { new Bumper(Car.Standard, 0), new Engine(Car.Standard, 0), new Hood(Car.Standard, 0), new Wheel(Car.Standard, 0) };
@@ -52,9 +49,8 @@ namespace Robotics
                 int partConstructionCapableRobots = 0;
 
                 foreach (Robot r in availableRobots)
-                {
-                    if (p.GetBuilt(r, false)) partConstructionCapableRobots++;
-                }
+                    if (p.GetBuilt(r, false))
+                        partConstructionCapableRobots++;
 
                 Console.WriteLine("Liczba robotow mogących wyprodukować {0}: {1}", p.GetName(), partConstructionCapableRobots);
             }
@@ -66,9 +62,7 @@ namespace Robotics
 
             foreach (Robot parent in new Robot[] { new ABB(), new Kuka(), new Puma() })
                 foreach (Robot child in new Robot[] { new ABB(), new Kuka(), new Puma() })
-                {
                     child.GetBuilt(parent, true);
-                }
         }
     }
 }
